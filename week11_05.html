@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showObject(obj,objName){
+            document.write(`<h1>${objName}</h1><hr>`);
+            document.write("<table border=1>");
+            document.write("<tr>");
+            document.write("<th>이름</th>");
+            document.write("<td>타입</td>");
+            document.write("<td>내용</td>");
+            document.write("</tr>");
+            for(let key in obj){
+                document.write(`<tr>`);
+                document.write(`<th>${key}</th>`);
+                document.write(`<td>${typeof(obj[key])}</td>`);
+                document.write(`<td>${obj[key]}</td>`);
+                document.write(`</tr>`);
+            }
+            document.write("</table>");
+        }
+    </script>
+</head>
+<body>
+</body>
+<script>
+    showObject(history,"history");
+    showObject(screen,"screen");
+    showObject(location,"location");
+    showObject(navigator,"navigator");
+    showObject(document,"document");
+    showObject(window,"window");
+</script>
+</html>

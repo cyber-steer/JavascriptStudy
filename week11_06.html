@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            //1. 처리할 객체를 선택한다.
+            let h = document.getElementById("title");
+            //2. 선택한 객체에 대한 수정을 처리한다
+            h.innerHTML = "JavaScript";
+            
+            //----------------------------------------------------
+            //1. 요소 노드 (li)를 모두 가져온다.
+            let liArray = document.getElementsByTagName("li");
+            liArray[1].innerHTML = "몇번째";
+            liArray[3].style.color = `blue`; liArray.l
+            liArray[3].style.backgroundColor = 'yellow';
+        }
+    </script>
+</head>
+<body>
+    <h1 id="title">웹개발기초II</h1>
+    <hr>
+    <h2>1학년 1반 수강자 명단</h2>
+    <ul>
+        <li>첫번째</li>
+        <li>두번째</li>
+        <li>세번째</li>
+        <li>네번째</li>
+    </ul>
+    
+</body>
+</html>

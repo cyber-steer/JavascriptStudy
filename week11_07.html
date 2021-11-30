@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event model: Inline</title>
+</head>
+<body>
+    <h1>Inline Event Model</h1>
+    <hr>
+    <ul>
+        <li onclick="alert(this.innerHTML)">홍길동</li>
+        <li onclick="this.style.color = `blue`;">이재명</li>
+        <li onmousedown="this.style.color = `red`;"
+            onmouseup="this.style.color = `black`;">윤석열</li>
+        <li>심상정</li>
+        <li>허경영</li>
+        <li>안철수</li>
+    </ul>
+</body>
+</html>

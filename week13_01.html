@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            border: 1px solid black;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+    </style>
+    <script>
+        //=========================================================================
+        function gid(id){
+            return document.getElementById(id);
+        }
+        //=========================================================================
+        function keydownHandler(){
+            if(event.keyCode == 13){ // Enter key를 눌렀으면
+                this.value = this.value.trim();
+                if(this.value.length <=0)
+                    return;
+                gid("output").innerHTML += "<span>"+this.value +"</span>";
+                this.value="";
+
+            }
+        }
+        function divClickHandler(){
+            this.innerHTML="";
+        }
+        //=========================================================================
+        window.onload = function(){
+            gid("inputText").addEventListener("keydown",keydownHandler);
+            gid("output").addEventListener('click',divClickHandler)
+        }
+        //=========================================================================
+        //=========================================================================
+        //=========================================================================
+    </script>
+</head>
+<body>
+    <h1>Text Input Control</h1>
+    <hr>
+    Input: <input id="inputText" type="text" size="50">
+    <hr>
+    <div id="output">
+    
+    </div>
+</body>
+</html>

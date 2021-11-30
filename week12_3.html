@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img.icon{
+            width: 50px;
+        }
+        .box{
+            text-align: center;
+        }
+    </style>
+    <script>
+        let fixImage = "img/dice.webp";
+        //===========================================================================
+        //class="icon"인 <img>를 click했을때 실행할 이벤트핸들러 정의
+        function iconClickHandler(){
+            //click 당한 자신의 속성 src값을 main의 src에 복사해 넣는다
+            // document.getElementById("main").src = this.src;
+            fixImage = this.src;
+        }
+        function iconMouseOverHandler(){
+            document.getElementById("main").src = this.src;
+            //----------------------------------------------
+            // for(let i=this.src.length-1;i>=0;i--){
+            //     if(this.src.charAt(i) == "/"){
+            //         document.querySelector("span").innerHTML = this.src.substring(i+1,this.src.length);
+            //         break;
+            //     }
+            // }
+            //---------------------------------------------------------------
+            let tokenArray  = this.src.split("/");
+            document.querySelector("span").innerHTML = tokenArray[tokenArray.length-1];
+        }
+        function iconMouseOutHandler(){
+            let tokenArray = fixImage.split("/");
+            document.getElementById("main").src = fixImage;
+            document.querySelector("span").innerHTML = tokenArray[tokenArray.length-1];
+        }
+        //===========================================================================
+        window.onload = function(){
+            //이벤트핸들러 iconClickHandler를 class="icon" image에 각각 연결
+            let iconArray = document.getElementsByClassName("icon");
+            // let iconArray = document.querySelectorAll(".icon");
+            for(let icon of iconArray){
+                icon.addEventListener('click', iconClickHandler);
+                icon.addEventListener('mouseover',iconMouseOverHandler);
+                icon.addEventListener('mouseout',iconMouseOutHandler); 
+            }
+
+        }
+        //===========================================================================
+    </script>
+</head>
+<body>
+    <h1>Image Browser</h1>
+    <hr>
+    <div class="box">
+        <img id="main" src="img/dice.webp"><br>
+        <span>image filename here</span>
+    </div>
+    <hr>
+    <div class="box">
+
+        <img class="icon" src="img/dice.webp">
+        <img class="icon" src="img/tree.webp">
+        <img class="icon" src="img/moon.webp">
+        <img class="icon" src="img/soc.webp">
+        <img class="icon" src="img/neko.webp">
+        <img class="icon" src="img/per.webp">
+        <img class="icon" src="img/mouse.png">
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span.type{
+            color: green;
+        }
+        span.key{
+            color: blue;
+            font-weight: bold;
+        }
+        span.objName{
+            color: red;
+        }
+    </style>
+    <script>
+        let count = 1;
+        //====================================================================
+        //주어진 객체의 속성들과 각 속성의 속성값을 출력하는 함수
+        //====================================================================
+        function showObject(obj, objName){
+        let count = 1;
+            document.write(`<h1>객체명: <span class="objName">${objName}</span></h1><hr>`)
+            for(let key in obj){ //객체 obj의 속성명을 차례대로 key에 셋팅.
+                document.write(`[${count++}]<span class="key">${key}</span>: ${obj[key]} <span class="type">(${typeof(obj[key])})</span><br>`);
+                
+            }
+        }
+        //====================================================================
+    </script>
+</head>
+<body>
+    
+</body>
+<script>
+    showObject(history,"history");
+    showObject(screen,"screen");
+    showObject(location,"location");
+    showObject(navigator,"navigator");
+    showObject(document,"document");
+    showObject(window,"window");
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Browser Object Model(BOM)</h1>
+    <hr>
+    <script>
+        // let name = prompt("이름을 입력하세요", "한글로 입력하세요. ");
+        // alert(`안녕하세요 ${name}씨~!`);
+        // let check = confirm("당신은 성인 입니까?"); //true, false 값 반환
+        // alert(check);
+        alert(`현재 URL:[${location.href}]`);
+        let newURL = prompt("새 URL 입력","https://www.naver.com");
+        location.href = newURL;
+        alert(`새 URL:[${location.href}]`);
+    </script>
+</body>
+</html>

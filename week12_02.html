@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event model: 표준이벤트모델</title>
+    <script>
+        function mouseDownHandler(){
+            this.style.color = 'blue';
+        }
+        function mouseUpHandler(){
+            this.style.color = 'black';
+        }
+        function mouseDownHandler2(){
+            this.innerHTML = "Standard Event Model";
+        }
+        function mouseUpHandler2(){
+            this.innerHTML = "표준 이벤트 모델";
+        }
+        //---------------------------------------
+        //버튼을 click을 했을때 처리할 이벤트 핸들러 정의하기
+        function buttonClickHandler(){
+            //1. <h1> 객체를 가져온다
+            let h = document.querySelector("h1");
+            //2. h1 객체의 이벤트 속성(onmousedown, onmouseup)에 등록된
+            //  이벤트 핸들러 중에서 칼라 설정관련 핸들러를 제거한다.
+            h.removeEventListener('mousedown',mouseDownHandler);
+            h.removeEventListener('mouseup',mouseUpHandler);
+            this.style.visibility = "hidden"
+            document.getElementById("add").style.visibility="visible";
+        }
+        function buttonClickHandler2(){
+            //1. <h1> 객체를 가져온다
+            let h = document.querySelector("h1");
+            //2. h1 객체의 이벤트 속성(onmousedown, onmouseup)에 등록된
+            //  이벤트 핸들러 중에서 칼라 설정관련 핸들러를 제거한다.
+            h.addEventListener('mousedown',mouseDownHandler);
+            h.addEventListener('mouseup',mouseUpHandler);
+            this.style.visibility = "hidden"
+            document.getElementById("remove").style.visibility="visible";
+
+        }
+        //================================
+        window.onload = function(){ //함수 저장
+            //1. 처리할 객체를 선택해서 가져온다.
+            let h =document.querySelector("h1");
+            //2. 가져온 객체의 이벤트 속성(onclick)에 이벤트핸들러를 저장한다
+            h.addEventListener('mousedown',mouseDownHandler);
+            h.addEventListener('mouseup',mouseUpHandler);
+            h.addEventListener('mousedown',mouseDownHandler2);
+            h.addEventListener('mouseup',mouseUpHandler2);
+            //------------------------------------------------------------------------------------
+            document.querySelector("#remove").addEventListener('click',buttonClickHandler);
+            document.querySelector("#add").addEventListener('click',buttonClickHandler2);
+            //버튼 노출 초기 설정하기
+            document.getElementById("add").style.visibility = "hidden";
+        }
+    </script>
+</head>
+<body>
+    <h1>표준 이벤트 모델</h1>
+    <button id="remove">칼라 설정 핸들러 제거하기</button>
+    <button id="add">칼라 설정 핸들러 추가하기</button>
+    <hr>
+    <h2>20대 대통령 선거 후보</h2>
+    <ul>
+        <li>이재명</li>
+        <li>윤석열</li>
+        <li>심상정</li>
+        <li>허경영</li>
+        <li>안철수</li>
+    </ul>
+</body>
+</html>
