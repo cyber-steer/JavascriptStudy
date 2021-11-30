@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('h1').click(function(){
+                $(this).hide(1000);
+            });
+            $("h2").click(function(){
+                $("h1").show(1000);
+            });
+            $("#hide").click(function(){
+                $("h3").hide(500);
+            });
+            $("#show").click(function(){
+                $("h3").show(500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>JQuery Test</h1>
+    <hr>
+    <h2>동북아시아 국가명</h2>
+    <hr>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <hr>
+    <h3>Korea</h3>
+    <h3>Japan</h3>
+    <h3>China</h3>
+
+
+
+
+    기본 문장 구조 $(selector).action() <br><br>
+    document.getElementalbyId("output").addEventListenere('click',clickHandler);<br>
+    $("#output").click(clickHandler);<br>
+    위 두개는 비슷한 코드
+    <br><br>
+    $(document).ready(function(){<br>
+        <br>
+    });<br>
+
+    window.onload = function(){<br>
+        <br>
+    };  <br>
+
+</body>
+</html>
