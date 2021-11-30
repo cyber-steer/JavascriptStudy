@@ -35,6 +35,33 @@
             cell0.innerHTML = "<b>"+newWord+"</b>";
             cell1.innerHTML = newWord.length;
             //생성된 셀에 필요한 이벤트핸들러를 연결한다
+            cell0.addEventListener('click',insertBefore);
+            cell1.addEventListener("click",killRow);
+        }
+        
+        //myTBody에 새 행을 만들어 주어진 새 단어 정보를 저장한다
+        function insertBefore(){
+            //input에 입력된 단어를 가져온다
+            let newWord = gid("inputText").value;
+            gid("inputText").value = "";
+            newWord = newWord.trim();
+            if(newWord.length <=0)
+                return;
+
+            //새행을 추가할 위치(index)를 계산한다.
+            let rowIndex = this.parentNode.rowIndex -1;
+
+            let tbody = gid("myTBody");
+            //tbody의 메소드(insertRow)를 이용하여 새 행을 생성한다.
+            let newRow = tbody.insertRow(rowIndex); // <tr>~</tr>
+            //새 행(newRow)을 이용하여 새 칼럼(셀) 두 개를 생성한다.
+            let cell0 = newRow.insertCell(0); // <td>~</td>
+            let cell1 = newRow.insertCell(1);
+            //생성된 cell들에 필요한 정보를 저장한다.
+            cell0.innerHTML = "<b>"+newWord+"</b>";
+            cell1.innerHTML = newWord.length;
+            //생성된 셀에 필요한 이벤트핸들러를 연결한다
+            cell0.addEventListener('click',insertBefore);
             cell1.addEventListener("click",killRow);
         }
         //=========================================================================
