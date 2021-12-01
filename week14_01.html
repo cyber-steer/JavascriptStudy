@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("h1").click(function(){
+                $(this).hide(500).show(500);
+                // $(this).show(500);
+            });
+            $("#hideAll").click(function(){
+                // $("h2").hide(500);
+                $("h2").fadeOut(500);
+            });
+            $("#showAll").click(function(){
+                // $("h2").show(500);
+                $("h2").fadeIn(500);
+            });
+            $("h2").click(function(){
+                // $(this).hide(500);
+                $(this).fadeOut(500);
+            });
+            $("#toggleAll").click(function(){
+                // $("h2").toggle(500);
+                $("h2").fadeToggle(500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>JQuery Effect Test</h1>
+    <hr>
+    <button id="hideAll">Hide All</button>
+    <button id="showAll">Show All</button>
+    <button id="toggleAll">Toggle All</button>
+    <hr>
+    <h2>Korea</h2>
+    <h2>Japan</h2>
+    <h2>China</h2>
+</body>
+</html>
