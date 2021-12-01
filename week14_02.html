@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <style>
+        #box{
+            border: 1px solid blue;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            position: absolute;
+        }
+    </style>
+    <script>
+        function keydownHandler(){
+            switch(event.keyCode){
+                case 37:
+                    $("#box").animate({
+                        left: "-=50"
+                    },100);
+                    break;
+                case 38:
+                    $("#box").animate({
+                        top: "-=50"
+                    },100);
+                    break
+                case 39:
+                    $("#box").animate({
+                        left: "+=50"
+                    },100);
+                    break
+                case 40:
+                    $("#box").animate({
+                        top: "+=50"
+                    },100);
+                    break
+            }
+        }
+        $(document).ready(function(){
+            $("body").keydown(keydownHandler);
+            $("#left").click(function(){
+                $("#box").animate({
+                    left: "-=100px"
+                },100);
+            });
+            $("#right").click(function(){
+                $("#box").animate({
+                    left: "+=100px"
+                },100);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>JQuery</h1>
+    <hr>
+    <button id="left">Left</button>
+    <button id="right">Right</button>
+    <hr>
+    <div id="box">Javascript</div>
+</body>
+</html>
