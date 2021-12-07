@@ -46,8 +46,13 @@
                 //입력된 내용을 listToDo의 새 항목으로 등록한다
                 //새 span 객체를 생성한다.
                 let newItem = document.createElement("span");
+                let btn = document.createElement("button");
+                btn.innerHTML = "X";
+                $(btn).addClass("btn btn-secondary");
+                
                 //생성된 객체의 내용을 입력된 내용으로 저장
                 newItem.innerHTML = this.value;
+                newItem.appendChild(btn);
                 //생성된 객체에 적용할 class를 등록한다
                 $(newItem).addClass("badge");
                 $(newItem).addClass("bg-success");
